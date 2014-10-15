@@ -1,0 +1,14 @@
+insert into squash_players (forename, surname, rank) values ('Nadeem', 'Choudry', 3);
+insert into squash_players (forename, surname, rank) values ('Andrew', 'Braithwaite', 1);
+insert into squash_players (forename, surname, rank) values ('Neil', 'Moorhouse', 4);
+insert into squash_players (forename, surname, rank) values ('Charlotte', 'Coote', 9);
+insert into squash_players (forename, surname, rank) values ('Kerry', 'Peake', 5);
+insert into squash_players (forename, surname, rank) values ('Eimear', 'Valley', 10);
+insert into squash_players (forename, surname, rank) values ('Chris', 'Beech', 11);
+insert into squash_players (forename, surname, rank) values ('Ian', 'Makin', 12);
+insert into squash_players (forename, surname, rank) values ('Jeremy', 'Lawson', 6);
+insert into squash_players (forename, surname, rank) values ('Lee', 'Sunter', 13);
+insert into squash_players (forename, surname, rank) values ('Al', 'Green', 8);
+insert into squash_players (forename, surname, rank) values ('Jim', 'McCourt', 2);
+insert into squash_players (forename, surname, rank) values ('Mark', 'Ames', 7);
+insert into squash_players (forename, surname, rank) values ('Neil', 'Machell', 14);
