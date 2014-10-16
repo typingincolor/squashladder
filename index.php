@@ -8,11 +8,7 @@
 
 <body>
 <?php
-	// set database access information
-	define('DB_USER', 'xxxxxx');
-	define('DB_PASSWORD', 'yyyyyyy');
-	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'zzzzzzzzzzz');
+	include("db.php");
 
 	echo '<H1>The latest GSSA Squash Ladder Standings</H1>';
 	echo '<p>Send results to <a href="mailto:a@test.com">Your Name</a>';
