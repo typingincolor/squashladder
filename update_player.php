@@ -11,11 +11,7 @@
 	// include common funtions
 	require("common_functions.php");
 
-	// set database access information
-	define('DB_USER', 'braither_user');
-	define('DB_PASSWORD', 'rosler');
-	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'braither_prod');
+	include("db.php");
 
 	echo '<H1>GSSA Squash Ladder: Player Update</H1>';
 	echo '<p>If you have any problems with this page email <a href="mailto:andrew.braithwaite@atosorigin.com">Andrew Braithwaite</a>';
@@ -26,7 +22,7 @@
 
 	// if the form has been posted then process it
 	if (isset($_POST['submit'])) {
-		
+
 		$message = NULL;
 
 		// check player 1
@@ -68,7 +64,7 @@
 			echo $message;
 			echo '</font>';
 		}
-		
+
 		echo '<p>Back to <a href="index.php">main page</a></p>';
 		echo '<p><a href="update_player.php">Update</a> another player</p>';
 	} else {
@@ -76,7 +72,7 @@
 		echo '<table cellspacing="2" cellpadding="2">';
 		echo '<tr><td>Player</td><td>' . playerNameDropDown("player") . '</td></tr>';
 		echo '<tr><td>Email address</td><td>';
-		echo '<input type="text" name="email" size="40"></input>'; 
+		echo '<input type="text" name="email" size="40"></input>';
 		echo '</td></tr>';
 		echo '</table>';
 		echo '<input type="reset" name="reset" value="Reset">';
@@ -88,4 +84,4 @@
 </body>
 
 </html>
-               
+

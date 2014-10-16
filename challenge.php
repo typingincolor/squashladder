@@ -11,11 +11,7 @@
 	// include common funtions
 	require("common_functions.php");
 
-	// set database access information
-	define('DB_USER', 'xxxxxx');
-	define('DB_PASSWORD', 'yyyyyyy');
-	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'zzzzzzzzzzz');
+	include("db.php");
 
 	echo '<H1>GSSA Squash Ladder: Make Challenge</H1>';
 	echo '<p>If you have any problems with this page email <a href="mailto:andrew.braithwaite@atosorigin.com">Andrew Braithwaite</a>';
