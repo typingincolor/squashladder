@@ -78,8 +78,9 @@ The application will be available at `http://localhost:8000`
 ### Ranking System
 
 - Players are ranked from 1 (highest) downward
-- When a lower-ranked player defeats a higher-ranked player, they swap positions
-- If a higher-ranked player wins, rankings remain unchanged
+- When entering results, choose from: "beat", "drew with", or "lost to"
+- Ranks swap when an upset occurs (lower-ranked player wins)
+- Rankings remain unchanged for expected outcomes or draws
 - Rankings are automatically updated when results are entered
 
 ## Development

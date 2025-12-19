@@ -105,8 +105,15 @@ Key rules:
 **Result Descriptions:**
 - ID 1: "beat" (player1 won)
 - ID 2: "drew with" (draw, no rank change)
+- ID 3: "lost to" (player1 lost, player2 won)
 
-When player1 beats player2 and player2.rank < player1.rank, ranks swap.
+**Ranking Logic:**
+- If player1 won AND player2 had higher rank (lower number) → swap ranks
+- If player1 lost AND player1 had higher rank (lower number) → swap ranks
+- If draw → no rank change
+- If expected outcome (higher rank wins) → no rank change
+
+This ensures upsets trigger rank swaps regardless of who enters the result.
 
 ### Database Schema
 
@@ -115,7 +122,7 @@ When player1 beats player2 and player2.rank < player1.rank, ranks swap.
 - `players`: Game data (forename, surname, email, rank, user_id FK)
 - `results`: Match results (player1_id, player2_id, result_description_id, match_date)
 - `challenges`: Challenge state (challenger_id, opponent_id, message, status, result_id FK)
-- `result_descriptions`: "beat" or "drew with"
+- `result_descriptions`: "beat", "drew with", or "lost to"
 
 **Important Indexes:**
 - `players.rank` (unique) - enables efficient ladder queries
