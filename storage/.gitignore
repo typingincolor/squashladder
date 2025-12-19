@@ -1,0 +1,8 @@
+*
+!.gitignore
+!framework/
+framework/*
+!framework/.gitignore
+!framework/cache/
+framework/cache/*
+!framework/cache/.gitignore
