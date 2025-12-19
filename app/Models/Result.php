@@ -62,6 +62,14 @@ class Result extends Model
     }
 
     /**
+     * Check if player1 lost
+     */
+    public function player1Lost(): bool
+    {
+        return $this->result_description_id === 3; // 'lost to'
+    }
+
+    /**
      * Get the winner of the match (null if draw)
      */
     public function getWinner(): ?Player
@@ -70,7 +78,15 @@ class Result extends Model
             return null;
         }
 
-        return $this->player1Won() ? $this->player1 : $this->player2;
+        if ($this->player1Won()) {
+            return $this->player1;
+        }
+
+        if ($this->player1Lost()) {
+            return $this->player2;
+        }
+
+        return null;
     }
 
     /**
@@ -82,7 +98,15 @@ class Result extends Model
             return null;
         }
 
-        return $this->player1Won() ? $this->player2 : $this->player1;
+        if ($this->player1Won()) {
+            return $this->player2;
+        }
+
+        if ($this->player1Lost()) {
+            return $this->player1;
+        }
+
+        return null;
     }
 
     /**
@@ -90,12 +114,18 @@ class Result extends Model
      */
     public function processRankings(): void
     {
-        // Only swap ranks if player1 won and player2 had a higher rank (lower number)
+        // Don't change ranks for draws
+        if ($this->isDraw()) {
+            return;
+        }
+
+        // If player1 won and player2 had a higher rank (lower number), swap them
         if ($this->player1Won() && $this->player2->rank < $this->player1->rank) {
             $this->player1->swapRankWith($this->player2);
         }
-        // If player2 won and player1 had a higher rank
-        elseif (!$this->player1Won() && !$this->isDraw() && $this->player1->rank < $this->player2->rank) {
+
+        // If player1 lost and player1 had a higher rank (lower number), swap them
+        if ($this->player1Lost() && $this->player1->rank < $this->player2->rank) {
             $this->player2->swapRankWith($this->player1);
         }
     }

@@ -15,6 +15,7 @@ class ResultDescriptionSeeder extends Seeder
         $descriptions = [
             ['id' => 1, 'description' => 'beat'],
             ['id' => 2, 'description' => 'drew with'],
+            ['id' => 3, 'description' => 'lost to'],
         ];
 
         foreach ($descriptions as $description) {
