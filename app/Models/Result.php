@@ -19,6 +19,7 @@ class Result extends Model
 
     protected $casts = [
         'match_date' => 'date',
+        'result_description_id' => 'integer',
     ];
 
     /**
