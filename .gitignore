@@ -15,3 +15,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/database/*.sqlite
+/database/*.sqlite-journal
+/bootstrap/cache/*
+!bootstrap/cache/.gitkeep
+storage/logs/*.log
