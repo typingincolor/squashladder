@@ -58,6 +58,9 @@ class ResultController extends Controller
         // Create the result
         $result = Result::create($validated);
 
+        // Load player relationships for ranking processing
+        $result->load(['player1', 'player2']);
+
         // If this result is from a challenge, mark the challenge as completed
         if (isset($validated['challenge_id'])) {
             $challenge = Challenge::findOrFail($validated['challenge_id']);
